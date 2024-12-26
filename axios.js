@@ -1,27 +1,30 @@
 //------AXIOS-------------
-
-// Install axios via npm
 // npm install axios
 
-import axios from 'axios';
+// import axios from 'axios';
+const axios = require("axios");
 
-// Making a GET request
-axios.get('https://api.example.com/data')
-  .then(response => {
-    console.log(response.data); // Handle the data from the response
-  })
-  .catch(error => {
-    console.error('Error fetching data:', error);
-  });
+//get request
+async function main() {
+	const response = await axios.get("https://jsonplaceholder.typicode.com/posts/1")
+	console.log(response.data);
+}
+main();
 
 // Making a POST request
-axios.post('https://api.example.com/login', {
-    username: 'example',
-    password: 'password123'
-  })
-  .then(response => {
-    console.log('Login success:', response.data);
-  })
-  .catch(error => {
-    console.error('Login failed:', error);
-  });
+// async function main() {
+//     const response = await axios.put("https://jsonplaceholder.typicode.com/posts/1")
+//     console.log(response.data);
+// }
+// main();
+
+
+// Send a POST request
+// axios({
+//     method: 'post',
+//     url: '/user/12345',
+//     data: {
+//         firstName: 'Fred',
+//         lastName: 'Flintstone'
+//     }
+// });
